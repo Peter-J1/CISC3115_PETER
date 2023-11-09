@@ -1,0 +1,188 @@
+Section 13.1
+Choices d, e, and f are the correct ways you can define an abstract class. Choice C is incorrect because the class is not abstract. Choice A is also not abstract and the method is not supposed to have a body. Choice B is incorrect because the syntax for abstract class is incorrect, it is supposed to be abstract class, not class abstract.
+
+Correct Code for A, B, and C:
+//Choice a
+abstract  class A { 
+ abstract void unfinished();
+}
+
+//Choice b
+public abstract  class A { 
+ abstract void unfinished();
+}
+
+//Choice c
+abstract  class A { 
+ abstract void unfinished();
+}
+
+
+Section 13.3: True or False?
+
+T
+T
+F, you can create a method in your subclass(1) that is unimplemented and could later
+Be implemented by creating a subclass(2) of the first subclass
+F
+T
+
+
+
+
+
+
+
+
+Section 13.4
+
+The two lines of code compile but cause a runtime error because in the second line of code, its trying to cast numberRef which is now an Integer object to a double. Instead of using double use parseDouble(numberRef)
+
+Possible Correct code:
+Number numberRef = new Integer(0);// 
+Double doubleRef =  Double.parseDouble(numberRef);
+
+
+Section 13.5
+
+Same issue as 13.4 trying to cast an Integer object number array to double, Double  is not a part of the Integer class
+
+Possible Correct code:
+Double[]  numberArray= new Double[2];
+numberArray[0] = new Double(1.5);
+
+Section 13.6
+
+3
+3.0
+
+Section 13.7
+
+Number class does not have the compareTo method. To use it cast the compareTo method to the Integer object
+
+(Integer)x.compareTo(new Integer(4));
+
+Section 13.8
+
+Don’t know the problem with the code, maybe change Number to Integer.
+
+
+
+Section 13.13 
+
+Not directly, you would have to implement your interface method in another class and from that class you could technically create an instance but not using new A().
+
+
+Section 13.14
+
+Yes, Example A x = new RandomClass();
+
+Section 13.15
+ANSWER: choice d
+
+A is incorrect because its method print implements/has a body. B also implements/has body, 
+Also has a redundant abstract in its class definition, the last error is it's trying to inherit multiple classes using extends. C has a redundant abstract in its class definition.
+
+Correct code:
+
+//a
+interface A{
+ void print();
+}
+
+//b
+interface A extends I2 implements I2{
+ Abstract void print();
+}
+
+//c
+interface A{
+ void print();
+}
+
+
+
+
+
+
+
+Section 13.16
+
+Missing public access modifier for class B
+
+Correct code:
+
+ interface A{
+    void m1();
+}
+
+public class B implements A {
+ void m1() {
+  System.out.println(“m1”);
+}
+}
+
+
+Section 13.7
+
+True
+
+Section 13.8
+
+public int CompareTo(String o)
+
+Section 13.19
+
+n2 inside the compareTo method is from the Object class and the compareTo method isn’t included in the Object class
+
+
+Section 13.20
+
+You would have access to all the methods from the Compareable class, which also includes the compareTo method.
+
+
+
+Section 13.21
+
+Code is missing the comparable interface when trying to sort the array
+
+Section 13.22
+
+No, you can’t invoke the clone method to an object if the class does not implement the Cloneable class. No, the date class doesn’t implement the class Cloneable
+
+Section 13.23
+
+If the House class did not implement the Cloneable class then you wouldn’t be able to use any of the methods from the Cloneable class in the House class.
+
+Section 13.24
+
+OUTPUTS:
+true
+false
+true
+
+Section 13.25
+ 
+OUTPUTS:
+true
+false
+list  is New York, Atlanta
+list1 is New York, Atlanta
+list2.get(0) is New York
+list2.size() is 1
+
+Section 13.26
+
+The Circle class doesn’t implement the Cloneable class so you can’t use the clone
+method for the y variable.
+
+
+
+Section 13.29
+
+True
+True
+True
+False, interface can’t inherit from an abstract class
+False, you can implement an interface and then  create another class that implements(inheritance) the previous class so you can write the statements of both the abstract and interface class methods
+
