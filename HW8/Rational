@@ -1,0 +1,58 @@
+public class Rational extends Number implements Comparable<Rational> {
+    private long numerator;
+    private long denominator;
+    public Rational(){
+        this(0,1);
+
+    }
+
+    public Rational(long numerator,long denominator){
+        this.numerator = numerator;
+        this.denominator = denominator;
+    }
+    public long getNumerator(){
+
+        return numerator;
+    }
+    public long getDenominator(){
+
+        return denominator;
+    }
+    public Rational add(Rational secondRational){
+        return new Rational((numerator * secondRational.getDenominator())
+                + (denominator * secondRational.getNumerator()),
+                denominator * secondRational.getDenominator());
+
+    }
+    public Rational subtract(Rational secondRational){
+        return new Rational((numerator * secondRational.getDenominator())
+                - (denominator * secondRational.getNumerator()),
+                denominator * secondRational.getDenominator());
+
+    }
+    public Rational multiply(Rational secondRational){
+        return new Rational(numerator * secondRational.getNumerator(),
+                denominator * secondRational.getDenominator());
+    }
+    public Rational divide(Rational secondRational){
+        return new Rational(numerator * secondRational.getDenominator(),
+                denominator * secondRational.getNumerator());
+    }
+
+    public String toString(){
+        if(denominator == 1)
+            return numerator + "";
+        else
+            return numerator + "/" + denominator;
+
+    }
+    public static long gcd(long num, long den){
+        if(num == 0)
+            return  den;
+        else
+            return gcd(den,num % den);
+
+    }
+
+}
+
